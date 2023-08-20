@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beata's Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #b3d0e9; /* Baby blue background color */
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      text-align: center;
+      padding: 20px;
+      font-family: cursive;
+      font-size: 36px;
+    }
+    .slideshow-container {
+      position: relative;
+      text-align: center;
+      padding: 20px;
+    }
+    .slideshow {
+      display: none;
+      max-width: 100%;
+      height: auto;
+    }
+    .item-description {
+      text-align: center;
+      padding: 20px;
+    }
+    .item-group {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+    }
+    .item-group img {
+      max-width: 30%;
+      height: auto;
+    }
+    .dropdown {
+      margin-top: 10px;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    Beata's Shop
+  </div>
+
+  <div class="slideshow-container">
+    <img class="slideshow" src="https://i.etsystatic.com/25175322/r/il/b2ffa1/3918397368/il_570xN.3918397368_8p99.jpg" alt="Vinyl Records">
+    <img class="slideshow" src="https://vegworldmag.com/wp-content/uploads/2021/06/becca-mchaffie-Fzde_6ITjkw-unsplash-1000x667.jpg" alt="Secondhand Items">
+    <img class="slideshow" src="https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?cs=srgb&dl=pexels-element-digital-1370295.jpg&fm=jpg" alt="Independent Books">
+  </div>
+
+  <div class="item-description">
+    <h2>Vinyl Records</h2>
+    h2>Vinyl Records</h2>
+  <p>Welcome to the vibes zone! 🎶 Get ready to groove with our lit collection of independent records from way back to the hottest new drops. We've got the beats that'll teleport you through time, fam! Select your jam from the dropdown below and let's vibe together. 🔥</p>
+    <p>Select a genre from the dropdown:</p>
+    <div class="dropdown">
+      <select id="genreDropdown">
+        <option value="funk">Funk</option>
+        <option value="jazz">Jazz</option>
+        <option value="soul">Soul</option>
+        <option value="pop">Pop</option>
+        <option value="rock">Rock</option>
+        <option value="alternative">Alternative</option>
+        <option value="indie">Indie</option>
+      </select>
+    </div>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="item-group">
+    <img src="https://i.etsystatic.com/25175322/r/il/b2ffa1/3918397368/il_570xN.3918397368_8p99.jpg" alt="Vinyl Records">
+  </div>
+
+  <div class="item-description">
+    <h2>Secondhand Items</h2>
+    <p>Our secondhand items are environmentally-friendly as they promote recycling and reduce waste.</p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="item-group">
+    <img src="https://vegworldmag.com/wp-content/uploads/2021/06/becca-mchaffie-Fzde_6ITjkw-unsplash-1000x667.jpg" alt="Secondhand Items">
+  </div>
+
+  <div class="item-description">
+    <h2>Independent Books</h2>
+    <p>Discover books written by young budding local writers, including Jane Tan, Mark Rashid, and John Manuels.</p>
+    <button>Add to Cart</button>
+  </div>
+
+  <div class="item-group">
+    <img src="https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?cs=srgb&dl=pexels-element-digital-1370295.jpg&fm=jpg" alt="Independent Books">
+  </div>
+
+  <div class="footer">
+    &copy; 2023 Beata's Shop. All rights reserved.
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slideshow');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides[currentSlide].style.display = 'none';
+      currentSlide = index % slides.length;
+      slides[currentSlide].style.display = 'block';
+    }
+
+    function changeSlide() {
+      showSlide(currentSlide + 1);
+      setTimeout(changeSlide, 3000); // Change slide every 3 seconds
+    }
+
+    changeSlide(); // Start the slideshow
+  </script>
+</body>
+</html>
